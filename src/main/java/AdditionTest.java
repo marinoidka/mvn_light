@@ -214,4 +214,3 @@ public class AdditionTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 }
-
