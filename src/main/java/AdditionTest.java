@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import pro.learnup.javaqa.group2.chernykh2.Addition;
+import java.util.Arrays;
+import org.junit.jupiter.api.Test;
 
 public class AdditionTest {
 
@@ -50,11 +51,11 @@ public class AdditionTest {
 
     @Test
     public void shouldCountLosersBorder() {
-        int[] speeds = {8, 8, 0};
+        int[] speeds = {7, 7, 7};
 
         int actual = Addition.droppedOut(speeds);
 
-        int expected = 2;
+        int expected = 0;
 
         Assertions.assertEquals(expected, actual);
     }
@@ -83,22 +84,22 @@ public class AdditionTest {
 
     @Test
     public void shouldCountLosersOnePlayer() {
-        int[] speeds = {8};
+        int[] speeds = {7};
 
         int actual = Addition.droppedOut(speeds);
 
-        int expected = 1;
+        int expected = 0;
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldCountSpeedLosers() {
-        int[] speeds = {8, 9, 10};
+        int[] speeds = {8, 8, 8};
 
         int[] actual = Addition.speedDroppedOut(speeds);
 
-        int[] expected = {8, 9, 10};
+        int[] expected = {8, 8, 8};
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -116,7 +117,7 @@ public class AdditionTest {
 
     @Test
     public void shouldCountSpeedLosersOne() {
-        int[] speeds = {0, 0, 1};
+        int[] speeds = {0, 0, 7};
 
         int[] actual = Addition.speedDroppedOut(speeds);
 
@@ -170,7 +171,7 @@ public class AdditionTest {
     }
 
     @Test
-    public void shouldCountSpeedWinnersNought() {
+    public void shouldCountSpeedWinnersOne() {
         int[] speeds = {7, 8, 9};
 
         int[] actual = Addition.speedStayedIn(speeds);
